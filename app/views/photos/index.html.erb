@@ -1,0 +1,44 @@
+<div id="photo_list" >
+<h1>Listing photos</h1>
+
+
+<table>
+
+
+<% @photos.each do |photo| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+
+    <td>
+      <%= image_tag(photo.image_url, :class => 'list_image') %>
+    </td>
+
+    <td class="list_description">
+      <dl>
+
+    <dt><%= photo.Title %></dt>
+    
+    <dt><%= photo.Location %></dt>
+    <dt><%= photo.Date_and_time %></dt>
+    <dt><%= photo.Photographer_name %></dt>
+    <dt><%= photo.image_url %></dt>
+    <dt><%= photo.single_price %></dt>
+    <dt><%= photo.outright_price %></dt>
+    <dd><%= truncate(strip_tags(photo.Description),
+            :length => 100) %></dd>
+      </dl>
+    </td>
+
+    <td class="list_actions" >
+<%= link_to 'Show', photo %><br/>
+<%= link_to 'Edit', edit_photo_path(photo) %><br/>
+<%= link_to 'Destroy', photo,
+:confirm => 'Are you sure?',
+:method => :delete %>
+</td>
+</tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'New Photo', new_photo_path %>
