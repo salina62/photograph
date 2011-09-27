@@ -1,0 +1,39 @@
+<% if notice %>
+
+<p id="notice" ><%= notice %></p>
+<% end %>
+
+<% form_tag photos_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :Title => nil, :Photographer_name =>nil %>
+  </p>
+<% end %>
+
+<% @photos.each do |photo| %>
+<div class="entry" >
+<h3><%= photo.Title %></h3>
+<%= image_tag(photo.image_url) %>
+<b> Description  </b> <%= sanitize(photo.Description) %>
+<p><b> Location  </b> <%= (photo.Location) %></p>
+<p><b> date and time  </b> <%= (photo.Date_and_time)%></p>
+<p><b> Photographed by  </b> <%= (photo.Photographer_name)  %></p>
+<div class="price_line" >
+  <span class="price" ><b> single price  </b><%= number_to_currency(photo.single_price) %></span>
+
+  <p><%= button_to t('.single_add_html'), line_items_path(:photo_id => photo, :purcahse_type=>0),
+      :remote => true %></p>
+  <p><span class="price" ><b> outright price  </b><%= number_to_currency(photo.outright_price) %></span></p>
+  <p><%= button_to t('.outright_add_html'), line_items_path(:photo_id => photo, :purchase_type =>1),
+      :remote => true %></p>
+
+
+</div>
+
+</div>
+
+<% end %>
+
+
+
+
