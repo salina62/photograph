@@ -1,10 +1,12 @@
 <div id="photo_list" >
-<h1>Listing photos</h1>
-
+  <% form_tag photos_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :Title => nil %>
+  </p>
+<% end %>
 
 <table>
-
-
 <% @photos.each do |photo| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
 
@@ -42,3 +44,5 @@
 <br />
 
 <%= link_to 'New Photo', new_photo_path %>
+
+  
