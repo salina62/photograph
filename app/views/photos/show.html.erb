@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @photo.Title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.Description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @photo.Location %>
+</p>
+
+<p>
+  <b>Date and time:</b>
+  <%= @photo.Date_and_time %>
+</p>
+
+<p>
+  <b>Photographer name:</b>
+  <%= @photo.Photographer_name %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @photo.image_url %>
+</p>
+<p>
+  <b>Original image url:</b>
+  <%= @photo.original_image_url %>
+</p>
+
+<p>
+  <b>Single price:</b>
+  <%= @photo.single_price %>
+</p>
+
+<p>
+  <b>Outright price:</b>
+  <%= @photo.outright_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
