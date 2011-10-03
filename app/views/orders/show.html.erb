@@ -21,15 +21,6 @@
 </p>
 
 
-<table>
-<% @order.line_items.each do |item| %>
-  <tr>
-    <td> <div class="entry">
-        <%= image_tag(item.photo.image_url) %>
-    </div>
-    </td>
-    <td><%= item.photo.Title %></td>
-    <td><%= link_to ('download'), item.photo.original_image_url, :target => "_blank"%></td>
-  </tr>
-<% end %>
-</table>
+
+
+
