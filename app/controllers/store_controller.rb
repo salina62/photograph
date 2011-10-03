@@ -6,10 +6,9 @@ class StoreController < ApplicationController
     if params[:set_locale]
     redirect_to store_path(:locale => params[:set_locale])
     else
-     @photos=   Photo.paginate :page=>params[:page],
+     @photos=   Photo.paginate :page=>params[:page], :order=>'created_at asc',
                :per_page => 5
     @cart = current_cart
-  end
-
-end
+   end
+ end
 end
