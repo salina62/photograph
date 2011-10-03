@@ -1,6 +1,6 @@
 photo.delete_all
-photo.create(:title => 'Giant Mushroom',
-:Description =>
+photo.create(:Title => 'Giant Mushroom',
+:Description => 
 %{<p>
  A picture of a giant mushroom look like beach shade.
 very interesting and amazingly photographed with a perfect
@@ -10,12 +10,13 @@ colour contrast.
   :Date_and_time.to_formatted_s(:db) => '2011-05-13 07:06:00 UTC' ,
   :Photographer_name => 'The LIbrary of Congress' ,
 :image_url => '/images/sampleImage1.jpg' ,
+:original_image_url => '/images/Image1.jpg',
 :single_price => 10.00 ,
 :outright_price => 100.00)
 
 
 # . ..
-photo.create(:title => 'Lincluden Abbey',
+photo.create(:Title => 'Lincluden Abbey',
 :Description =>
 %{<p>
 a very amazing views of landscape and architecture in Scotland.
@@ -25,29 +26,31 @@ this amazing picture was taken some time in 1890.
   :Date_and_time.to_formatted_s(:db) => '2006-02-11 06:27:00 UTC' ,
   :Photographer_name => 'Philip Klinger' ,
 :image_url => '/images/sampleImage2.jpg' ,
+:original_image_url => '/images/Image2.jpg',
 :single_price => 11.00 ,
 :outright_price => 110.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Four of a Kind',
+photo.create(:Title => 'Four of a Kind',
 :Description =>
 %{<p>
- a picture of very cute goats with the view od South PArk and the
+ a picture of very cute goats with the view of South Park and the
 Collegiates in the distance. remarkably cute picture.
 </p>},
   :Location => 'Colorado, USA' ,
   :Date_and_time.to_formatted_s(:db) => '2010-08-11 01:30:00 UTC' ,
   :Photographer_name => 'Sandra Leidholdt' ,
 :image_url => '/images/sampleImage3.jpg' ,
+:original_image_url => '/images/Image3.jpg',
 :single_price => 12.00 ,
 :outright_price => 120.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'New York, Times Square -Busy Crossing',
+photo.create(:Title => 'New York, Times Square -Busy Crossing',
 :Description =>
 %{<p>
  a picture revealing how busy new york city is. the photo
@@ -58,13 +61,14 @@ cross processing and tonal contrast from color Efex.
   :Date_and_time.to_formatted_s(:db) => '2009-06-16 21:44:00 UTC' ,
   :Photographer_name => 'Philip Klinger' ,
 :image_url => '/images/sampleImage4.jpg' ,
+:original_image_url => '/images/Image4.jpg',
 :single_price => 13.00 ,
 :outright_price => 130.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Young Hyena',
+photo.create(:Title => 'Young Hyena',
 :Description =>
 %{<p>
  a picture of a young hyena who was nervous to give a shot and turned back
@@ -76,13 +80,14 @@ which is the beauty of this picture.
   :Date_and_time.to_formatted_s(:db) => '2011-08-21 03:37:00 UTC' ,
   :Photographer_name => 'Piet Grobler' ,
 :image_url => '/images/sampleImage5.jpg' ,
+:original_image_url => '/images/Image5.jpg',
 :single_price => 9.00 ,
 :outright_price => 90.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Stromy Night at Horeshoe Bend',
+photo.create(:Title => 'Stromy Night at Horeshoe Bend',
 :Description =>
 %{<p>
  a beautiful picture from nothern arizona clicked just as the wind started
@@ -92,13 +97,14 @@ blowing with a definite treat of a sunset.
   :Date_and_time.to_formatted_s(:db) => '2011-08-18 05:30:00 UTC' ,
   :Photographer_name => 'Aaron M' ,
 :image_url => '/images/sampleImage6.jpg' ,
+:original_image_url => '/images/Image6.jpg',
 :single_price => 11.00 ,
 :outright_price => 110.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Nightingale',
+photo.create(:Title => 'Nightingale',
 :Description =>
 %{<p>
  a very cute and funny picture of a nightingale with blured view at
@@ -108,13 +114,14 @@ the distance and a clear vegetation.
   :Date_and_time.to_formatted_s(:db) => '2010-06-05 05:27:00 UTC' ,
   :Photographer_name => 'Rudiger' ,
 :image_url => '/images/sampleImage7.jpg' ,
+:original_image_url => '/images/Image7.jpg',
 :single_price => 10.00 ,
 :outright_price => 100.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Santa Monica Pier',
+photo.create(:Title => 'Santa Monica Pier',
 :Description =>
 %{<p>
  a very wonderful picture of Santa Monica with mind blowing nightview
@@ -123,13 +130,14 @@ photo.create(:title => 'Santa Monica Pier',
   :Date_and_time.to_formatted_s(:db) => '2009-10-23 08:27:00 UTC' ,
   :Photographer_name => 'Rudiger' ,
 :image_url => '/images/sampleImage9.jpg' ,
+:original_image_url => '/images/Image9.jpg',
 :single_price => 15.00 ,
 :outright_price => 150.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'dew drop',
+photo.create(:Title => 'dew drop',
 :Description =>
 %{<p>
  a phenominal picture of a dew drop with a reflection of a
@@ -141,13 +149,14 @@ of the picture.
   :Date_and_time.to_formatted_s(:db) => '2009-04-11 06:15:00 UTC' ,
   :Photographer_name => 'Rudiger' ,
 :image_url => '/images/sampleImage10.jpg' ,
+:original_image_url => '/images/Image10.jpg',
 :single_price => 16.00 ,
 :outright_price => 160.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Dusk',
+photo.create(:Title => 'Dusk',
 :Description =>
 %{<p>
  an excellent picture of the road with beautiful texture and a
@@ -158,13 +167,14 @@ yellow lines that can take one ot the beautiful hills at the distance .
   :Date_and_time.to_formatted_s(:db) => '2007-01-05 17:17:00 UTC' ,
   :Photographer_name => 'Rudiger' ,
 :image_url => '/images/sampleImage11.jpg' ,
+:original_image_url => '/images/Image11.jpg',
 :single_price => 10.00 ,
 :outright_price => 100.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Seattle At NIght',
+photo.create(:Title => 'Seattle At NIght',
 :Description =>
 %{<p>
  breathtaking picture of nighttime skyline. overall outstanding capture
@@ -174,13 +184,14 @@ of Seattle city.
   :Date_and_time.to_formatted_s(:db) => '2011-08-16 21:27:00 UTC' ,
   :Photographer_name => 'name not available' ,
 :image_url => '/images/sampleImage12.jpg' ,
+:original_image_url => '/images/Image12.jpg',
 :single_price => 12.00 ,
 :outright_price => 120.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Mandelabridge Zoetermeer',
+photo.create(:Title => 'Mandelabridge Zoetermeer',
 :Description =>
 %{<p>
  a very interesting picture of namdelabridge. which
@@ -192,13 +203,14 @@ very perfect perspectives.
   :Date_and_time.to_formatted_s(:db) => '2006-07-06 14:37:00 UTC' ,
   :Photographer_name => 'Kees de Vos' ,
 :image_url => '/images/sampleImage13.jpg' ,
+:original_image_url => '/images/Image13.jpg',
 :single_price => 12.00 ,
 :outright_price => 120.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Canopus1',
+photo.create(:Title => 'Canopus1',
 :Description =>
 %{<p>
   the picture is the great presentation of Villa Adriana.in this picture one can
@@ -209,13 +221,14 @@ reflection and composition.
   :Date_and_time.to_formatted_s(:db) => '2006-07-31 13:27:00 UTC' ,
   :Photographer_name => 'Richard White' ,
 :image_url => '/images/sampleImage14.jpg' ,
+:original_image_url => '/images/Image14.jpg',
 :single_price => 15.00 ,
 :outright_price => 150.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Garade Liege - Guillemins',
+photo.create(:Title => 'Garade Liege - Guillemins',
 :Description =>
 %{<p>
  a picture of a Calatrava buildings with an amazing
@@ -225,13 +238,14 @@ composition.
   :Date_and_time.to_formatted_s(:db) => '2008-05-10 16:56:00 UTC' ,
   :Photographer_name => 'Kristo' ,
 :image_url => '/images/sampleImage15.jpg' ,
+:original_image_url => '/images/Image15.jpg',
 :single_price => 10.00 ,
 :outright_price => 100.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Stream',
+photo.create(:Title => 'Stream',
 :Description =>
 %{<p>
  a picture of a stream of Oregon coast with beautiful
@@ -242,13 +256,14 @@ photography.
   :Date_and_time.to_formatted_s(:db) => '2006-06-11 17:27:00 UTC' ,
   :Photographer_name => 'AJ Schuster' ,
 :image_url => '/images/sampleImage16.jpg' ,
+:original_image_url => '/images/Image16.jpg',
 :single_price => 15.00 ,
 :outright_price => 150.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Split light',
+photo.create(:Title => 'Split light',
 :Description =>
 %{<p>
  a picture in which one world meets another. this picture has
@@ -259,13 +274,14 @@ look at it every time. very beautiful
   :Date_and_time.to_formatted_s(:db) => '2006-07-23 18:27:00 UTC' ,
   :Photographer_name => 'eden' ,
 :image_url => '/images/sampleImage17.jpg' ,
+:original_image_url => '/images/Image17.jpg',
 :single_price => 15.00 ,
 :outright_price => 150.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Lake Wanaka',
+photo.create(:Title => 'Lake Wanaka',
 :Description =>
 %{<p>
  a picture of lake wanaka with lovely reflection of trees
@@ -275,13 +291,14 @@ that gives a surreal feel. a very well composition
   :Date_and_time.to_formatted_s(:db) => '2011-04-21 17:17:00 UTC' ,
   :Photographer_name => 'Karen' ,
 :image_url => '/images/sampleImage18.jpg' ,
+:original_image_url => '/images/Image18.jpg',
 :single_price => 11.00 ,
 :outright_price => 110.00)
 
 # . ..
 
 # . ..
-photo.create(:title => 'Explored',
+photo.create(:Title => 'Explored',
 :Description =>
 %{<p>
  The rhythm of my footsteps crossing flatlands
@@ -292,6 +309,7 @@ The distance is quite simply much too far for me to row.
   :Date_and_time.to_formatted_s(:db) => '2011-08-07 17:27:00 UTC' ,
   :Photographer_name => 'kelley Leigh' ,
 :image_url => '/images/sampleImage19.jpg' ,
+:original_image_url => '/images/Image19.jpg',
 :single_price => 9.00 ,
 :outright_price => 90.00)
 
@@ -300,7 +318,7 @@ The distance is quite simply much too far for me to row.
 
 
 # . ..
-photo.create(:title => 'Lake Wanaka',
+photo.create(:Title => 'Lake Wanaka2',
 :Description =>
 %{<p>
  a picture of lake Wanaka. the picture is very artistic with
@@ -311,6 +329,7 @@ scene.in one word, simply spectacular.
   :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
   :Photographer_name => 'Karen' ,
 :image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
 :single_price => 16.00 ,
 :outright_price => 160.00)
 
