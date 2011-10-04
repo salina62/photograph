@@ -61,7 +61,8 @@ class MainusersController < ApplicationController
 
     respond_to do |format|
       if @mainuser.update_attributes(params[:mainuser])
-        format.html { redirect_to(@mainuser, :notice => 'Mainuser was successfully updated.') }
+        format.html { redirect_to(store_url,
+         :notice => "Mainuser #{@mainuser.name} was successfully created.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
