@@ -2,7 +2,7 @@ class MainusersController < ApplicationController
   # GET /mainusers
   # GET /mainusers.xml
   def index
-    @mainusers = Mainuser.all
+    @mainusers = Mainuser.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
