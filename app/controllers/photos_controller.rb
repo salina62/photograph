@@ -1,11 +1,11 @@
 class PhotosController < ApplicationController
-  
+  skip_before_filter :userauthorize
   # GET /photos
   # GET /photos.xml
    
   def index
     @photos = Photo.search(params[:search])
-    @photos=  Photo. paginate :page=>params[:page], :per_page => 5
+    
 
     respond_to do |format|
       format.html # index.html.erb

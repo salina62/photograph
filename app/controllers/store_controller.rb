@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
   skip_before_filter :authorize
+  skip_before_filter :userauthorize
   def index
     #to get the photos from the database with the search
     @photos = Photo.search(params[:search])

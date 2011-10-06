@@ -43,9 +43,9 @@ class MainusersController < ApplicationController
     @mainuser = Mainuser.new(params[:mainuser])
 
     respond_to do |format|
-      if @user.save
+      if @mainuser.save
         format.html { redirect_to(store_url,
-        :notice => "Mainuser #{@mainuser.name} was successfully created.") }
+        :notice => "customer #{@mainuser.name} was successfully created.") }
         format.xml  { render :xml => @mainuser, :status => :created, :location => @mainuser }
       else
         format.html { render :action => "new" }
