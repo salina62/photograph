@@ -335,4 +335,178 @@ scene.in one word, simply spectacular.
 
 # . ..
 
+# . ..
+photo.create(:Title => 'Ice Temple',
+:Description =>
+%{<p>
+ amazing shot with beautiful colours
+</p>},
+  :Location => 'Pleneau Bay, Antarctic Peninsula. Iceberg arch' ,
+  :Date_and_time.to_formatted_s(:db) => '2007-02-19 14:50:00 UTC' ,
+  :Photographer_name => 'Rusty Jackson' ,
+:image_url => '/images/sampleImage21.jpg' ,
+:original_image_url => '/images/Image21.jpg',
+:single_price => 19.00 ,
+:outright_price => 190.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'skybird in Antarctica',
+:Description =>
+%{<p>
+ just a beautiful picture taken on the way to Antarctica. perfect timing
+</p>},
+  :Location => 'Antarctica' ,
+  :Date_and_time.to_formatted_s(:db) => '2008-12-11 15:50:00 UTC' ,
+  :Photographer_name => 'John Dalkin' ,
+:image_url => '/images/sampleImage8.jpg' ,
+:original_image_url => '/images/Image8.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'All sizes',
+:Description =>
+%{<p>
+more Antarctica shot from John Dalkin
+</p>},
+  :Location => 'Antarctica' ,
+  :Date_and_time.to_formatted_s(:db) => '2009-17-01 15:04:00 UTC' ,
+  :Photographer_name => 'John Dalkin' ,
+:image_url => '/images/sampleImage22.jpg' ,
+:original_image_url => '/images/Image22.jpg',
+:single_price => 13.00 ,
+:outright_price => 130.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
+# . ..
+photo.create(:Title => 'Lake Wanaka2',
+:Description =>
+%{<p>
+ a picture of lake Wanaka. the picture is very artistic with
+fantastic colours presenting incredible beauty of a beautiful
+scene.in one word, simply spectacular.
+</p>},
+  :Location => 'Wanaka, Otago, NZ' ,
+  :Date_and_time.to_formatted_s(:db) => '2011-05-11 16:17:00 UTC' ,
+  :Photographer_name => 'Karen' ,
+:image_url => '/images/sampleImage20.jpg' ,
+:original_image_url => '/images/Image20.jpg',
+:single_price => 16.00 ,
+:outright_price => 160.00)
+
+# . ..
+
 
