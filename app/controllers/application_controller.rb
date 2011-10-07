@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
   before_filter :authorize
   before_filter :userauthorize
+  before_filter :mainadminauthorize
   protect_from_forgery
   
   
@@ -38,10 +39,25 @@ end
        end
      else
        authenticate_or_request_with_http_basic do |username, password|
-          Mainser.authenticate(username, password)
+          Mainuser.authenticate(username, password)
        end
       end
     end
+
+    protected
+
+    def mainadminauthorize
+     if request.format == Mime::HTML
+       unless Mainadmin.find_by_id(session[:mainadmin_id])
+          redirect_to mainadminlogin_url, :notice => "Please log in"
+       end
+     else
+       authenticate_or_request_with_http_basic do |username, password|
+          Mainadmin.authenticate(username, password)
+       end
+      end
+    end
+
 
   def set_i18n_locale_from_params
       if params[:locale]
