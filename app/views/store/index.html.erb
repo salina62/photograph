@@ -10,6 +10,8 @@
   </p>
 <% end %>
 
+  <h1><%= t('.title_html') %></h1>
+
 <% @photos.each do |photo| %>
 <div class="entry" >
 <h3><%= photo.Title %></h3>
@@ -20,20 +22,40 @@
 <p><b> Photographed by  </b> <%= (photo.Photographer_name)  %></p>
 <div class="price_line" >
   <span class="price" ><b> single price  </b><%= number_to_currency(photo.single_price) %></span>
-
+     <%if session[:user_id]%>
   <p><%= button_to t('.single_add_html'), line_items_path(:photo_id => photo, :purcahse_type=>0),
       :remote => true %></p>
+   <%  end %>
+  <%if session[:mainuser_id]%>
+  <p><%= button_to t('.single_add_html'), line_items_path(:photo_id => photo, :purcahse_type=>0),
+      :remote => true %></p>
+   <%  end %>
+  <%if session[:mainadmin_id]%>
+  <p><%= button_to t('.single_add_html'), line_items_path(:photo_id => photo, :purcahse_type=>0),
+      :remote => true %></p>
+   <%  end %>
+  <div class="price_line1" >
   <p><span class="price" ><b> outright price  </b><%= number_to_currency(photo.outright_price) %></span></p>
+  <%if session[:user_id]%>
   <p><%= button_to t('.outright_add_html'), line_items_path(:photo_id => photo, :purchase_type =>1),
       :remote => true %></p>
-
+  <% end  %>
+  <%if session[:mainuser_id]%>
+  <p><%= button_to t('.outright_add_html'), line_items_path(:photo_id => photo, :purchase_type =>1),
+      :remote => true %></p>
+  <% end  %>
+  <%if session[:mainadmin_id]%>
+  <p><%= button_to t('.outright_add_html'), line_items_path(:photo_id => photo, :purchase_type =>1),
+      :remote => true %></p>
+  <% end  %>
 
 </div>
 
+</div>
 </div>
 
 <% end %>
-
+<p><%= will_paginate @photos %></p>
 
 
 
