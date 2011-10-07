@@ -31,22 +31,42 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
   <a href="http://localhost:3000/" ><%= t('.home') %></a><br />
 <a href="http://localhost:3000/news" ><%= t('.news') %></a><br />
 <a href="http://localhost:3000/contacts" ><%= t('.contact') %></a><br />
-<a href="http://localhost:3000/admin" ><%= t('.login') %></a><br />
-
+<a href="http://localhost:3000/login" ><%= t('.staff') %></a><br />
 <a href="http://localhost:3000/mainusers/new" ><%= t('.sign up') %></a><br />
-<a href="http://localhost:3000/userlogin" ><%= t('.signin') %></a><br />
-
+<a href="http://localhost:3000/userlogin" ><%= t('.user') %></a><br />
+<a href="http://localhost:3000/mainadminlogin" ><%= t('.main admin') %></a><br />
+<% if session[:user_id] %>
+<a href="http://localhost:3000/mainusers/new" ><%= t('.user sign up') %></a><br />
+<a href="http://localhost:3000/mainadminlogin" ><%= t('.main admin') %></a><br />
+<% end %>
+<% if session[:mainuser_id] %>
+<a href="http://localhost:3000/users/new" ><%= t('.sign up') %></a><br />
+<% end %>
+<% if session[:mainadmin_id] %>
+<a href="http://localhost:3000/userlogin" ><%= t('.user sign in') %></a><br />
+<a href="http://localhost:3000/login" ><%= t('.staff') %></a><br />
+<% end %>
     <% if session[:user_id] %>
 <br />
 <%= link_to 'Orders', orders_path %><br />
 <%= link_to 'Photos', photos_path %><br />
 <%= link_to 'user', mainusers_path %><br />
-<br /> 
+<br />
+<%= button_to ' staff Logout', logout_path, :method => :delete %>
+<% end %>
+
+<% if session[:mainadmin_id] %>
+<br />
+<%= link_to 'Orders', orders_path %><br />
+<%= link_to 'Photos', photos_path %><br />
+<%= link_to 'user', mainusers_path %><br />
+<br />
+<%= button_to ' admin Logout', mainadminlogout_path, :method => :delete %>
 <% end %>
 
 <% if session[:mainuser_id] %>
   <br />
-  <%= button_to 'Logout', userlogout_path, :method => :delete %>
+  <%= button_to 'user Logout', userlogout_path, :method => :delete %>
 <% end %>
 </div>
 <div id="main" >
