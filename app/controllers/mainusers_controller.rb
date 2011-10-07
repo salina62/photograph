@@ -1,6 +1,9 @@
 class MainusersController < ApplicationController
   # GET /mainusers
   # GET /mainusers.xml
+  skip_before_filter :authorize
+  skip_before_filter :userauthorize
+  skip_before_filter :mainadminauthorize
   def index
     @mainusers = Mainuser.order(:name)
 
@@ -61,7 +64,7 @@ class MainusersController < ApplicationController
 
     respond_to do |format|
       if @mainuser.update_attributes(params[:mainuser])
-        format.html { redirect_to(store_url,
+        format.html { redirect_to(mainusers_url,
          :notice => "Mainuser #{@mainuser.name} was successfully created.") }
         format.xml  { head :ok }
       else
