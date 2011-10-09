@@ -1,17 +1,24 @@
 <div id="photo_list" >
-  <% form_tag photos_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :Title => nil %>
-  </p>
-<% end %>
-
 <table>
+  <% if session[:mainuser_id] %>
+        <%= link_to 'New Photo', new_photo_path %>
+     <% end %>
+
+     <% if session[:adminuser_id] %>
+        <%= link_to 'New Photo', new_photo_path %>
+     <% end %>
+
+  <% if session[:user_id] %>
+        <%= link_to 'New Photo', new_photo_path %>
+     <% end %>
 <% @photos.each do |photo| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
 
     <td>
-      <%= image_tag(photo.image_url, :class => 'list_image') %>
+      <% if photo.snap %>
+      <%= image_tag(url_for({:action => 'sample_image', :id => photo.id}),
+      :class => 'list_image') %>
+      <% end  %>
     </td>
 
     <td class="list_description">
@@ -22,7 +29,6 @@
     <dt><%= photo.Location %></dt>
     <dt><%= photo.Date_and_time %></dt>
     <dt><%= photo.Photographer_name %></dt>
-    <dt><%= photo.image_url %></dt>
     <dt><%= photo.single_price %></dt>
     <dt><%= photo.outright_price %></dt>
     <dd><%= truncate(strip_tags(photo.Description),
@@ -30,19 +36,45 @@
       </dl>
     </td>
 
+    <% if session[:user_id] %>
     <td class="list_actions" >
-<%= link_to 'Show', photo %><br/>
-<%= link_to 'Edit', edit_photo_path(photo) %><br/>
-<%= link_to 'Destroy', photo,
-:confirm => 'Are you sure?',
-:method => :delete %>
-</td>
-</tr>
+       <%= link_to 'Show', photo %><br/>
+       <%= link_to 'Edit', edit_photo_path(photo) %><br/>
+       <%= link_to 'Destroy', photo,
+                   :confirm => 'Are you sure?',
+                   :method => :delete %>
+       <%= link_to 'hide', photo %>
+    </td>
+  <% end %>
+
+    <% if session[:mainuser_id] %>
+    <td class="list_actions" >
+       <%= link_to 'Show', photo %><br/>
+       <%= link_to 'Edit', edit_photo_path(photo) %><br/>
+          </td>
+  <% end %>
+
+
+     <% if session[:adminuser_id] %>
+      <td class="list_actions">
+
+        <%= link_to 'Show', photo %><br/>
+        <%= link_to 'Edit', edit_photo_path(photo) %><br/>
+        <%= link_to 'Destroy', photo,
+                   :confirm => 'Are you sure?',
+                   :method => :delete %>
+     </td>
+     
+     <% end %>
+
+     
+  </tr>
+  
 <% end %>
 </table>
 </div>
 <br />
 
-<%= link_to 'New Photo', new_photo_path %>
-<p><%= will_paginate @photos %></p>
+
+
   
