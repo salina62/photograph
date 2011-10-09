@@ -4,17 +4,31 @@ class Photo < ActiveRecord::Base
   has_many :orders, :through => :line_items
 
   
+  attr_reader :sample_image
   before_destroy :ensure_not_referenced_by_any_line_item
-   before_destroy :ensure_not_referenced_by_any_line_item_for_image
+   
   
   validates :Title, :Description, :Location, :Date_and_time, :Photographer_name,
-    :image_url, :original_image_url, :single_price, :outright_price, :presence => true
+   :single_price, :outright_price, :presence => true
   validates :Title, :uniqueness => true
   validates :single_price, :outright_price, :numericality =>
     {:greater_than_or_equal_to => 0.01}
-  validates :image_url, :format =>{
-            :with => %r{\.(gif|jpg|png)$}i,
-            :message => 'must be a URL for GIF, JPG or PNG image.'}
+ 
+  
+  def sample_image=(photo_field)
+    #self.name =~ /\.(jpeg|jpg|gif|png)$/i
+    self.content_type = photo_field.content_type.to_s.chomp
+     self.snap = photo_field.read
+   end
+
+  def original_image=(photo_field)
+    #self.name =~ /\.(jpeg|jpg|gif|png)$/i
+    self.content_type = photo_field.content_type.to_s.chomp
+     self.realsnap = photo_field.read
+   end
+   
+
+  
           private
           # ensure that there are no line items referencing this product
             def ensure_not_referenced_by_any_line_item
