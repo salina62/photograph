@@ -21,6 +21,7 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
 
   <%= @page_title || t('.title') %><!-- <label id="code.depot.e.title"/> -->
   </div>
+  
   <div id="columns">
     <div id="side">
       <% if @cart %>
@@ -31,22 +32,14 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
   <a href="http://localhost:3000/" ><%= t('.home') %></a><br />
 <a href="http://localhost:3000/news" ><%= t('.news') %></a><br />
 <a href="http://localhost:3000/contacts" ><%= t('.contact') %></a><br />
-<a href="http://localhost:3000/login" ><%= t('.staff') %></a><br />
 <a href="http://localhost:3000/mainusers/new" ><%= t('.sign up') %></a><br />
-<a href="http://localhost:3000/userlogin" ><%= t('.user') %></a><br />
-<a href="http://localhost:3000/mainadminlogin" ><%= t('.main admin') %></a><br />
-<% if session[:user_id] %>
-<a href="http://localhost:3000/mainusers/new" ><%= t('.user sign up') %></a><br />
-<a href="http://localhost:3000/mainadminlogin" ><%= t('.main admin') %></a><br />
-<% end %>
-<% if session[:mainuser_id] %>
-<a href="http://localhost:3000/users/new" ><%= t('.sign up') %></a><br />
-<% end %>
-<% if session[:mainadmin_id] %>
+<a href="http://localhost:3000/adminuserlogin" ><%= t('.admin') %></a><br />
+<a href="http://localhost:3000/login" ><%= t('.staff') %></a><br />
+<% if session[:adminuser_id] %>
 <a href="http://localhost:3000/userlogin" ><%= t('.user sign in') %></a><br />
 <a href="http://localhost:3000/login" ><%= t('.staff') %></a><br />
 <% end %>
-    <% if session[:user_id] %>
+<% if session[:user_id] %>
 <br />
 <%= link_to 'Orders', orders_path %><br />
 <%= link_to 'Photos', photos_path %><br />
@@ -55,13 +48,17 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
 <%= button_to ' staff Logout', logout_path, :method => :delete %>
 <% end %>
 
-<% if session[:mainadmin_id] %>
+<% if session[:adminuser_id] %>
 <br />
 <%= link_to 'Orders', orders_path %><br />
 <%= link_to 'Photos', photos_path %><br />
 <%= link_to 'user', mainusers_path %><br />
+<%= link_to 'staff', users_path  %>
 <br />
-<%= button_to ' admin Logout', mainadminlogout_path, :method => :delete %>
+<% end  %>
+<% if session[:adminuser_id] %>
+   <br/>
+<%= button_to ' admin Logout', adminuserlogout_path, :method => :delete %>
 <% end %>
 
 <% if session[:mainuser_id] %>
