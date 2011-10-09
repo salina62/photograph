@@ -1,6 +1,24 @@
 Photograph::Application.routes.draw do
  
+ 
+
+  get "adminusersession/create"
+
+  get "adminusersession/destroy"
+
+  
+
+  resources :adminusers
+
   resources :mainusers
+
+  get 'adminuserpage' => 'adminuserpage#index'
+
+  controller :adminusersession do
+    get 'adminuserlogin' => :new
+    post 'adminuserlogin' => :create
+   delete 'adminuserlogout' => :destroy
+  end
 
   get 'mainuserpage' => 'mainuserpage#index'
 
@@ -29,6 +47,9 @@ end
   
   resources :photos do
     get :who_bought, :on => :member
+    get :sample_image, :on => :member
+    get :original_image, :on => :member
+    
   end
 
   # The priority is based upon order of creation:
