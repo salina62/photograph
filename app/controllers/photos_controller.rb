@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
   skip_before_filter :userauthorize
+  skip_before_filter :adminuserauthorize
+  skip_before_filter :authorize
   # GET /photos
   # GET /photos.xml
    
@@ -98,6 +100,25 @@ class PhotosController < ApplicationController
       format.xml { render :xml => @photo }
     end
   end
+
+  def sample_image
+     @sample_image = Photo.find(params[:id])
+     send_data(@sample_image.snap,
+     :filename =>"sampleImage1.jpg" ,
+     :content_type => @sample_image.content_type,
+     :disposition => "inline")
+ end
+
+  def original_image
+     @original_image = Photo.find(params[:id])
+     send_data(@original_image.realsnap,
+     :filename =>"sampleImage1.jpg" ,
+     :content_type => @original_image.contente_type,
+     :disposition => "inline")
+ end
+
+
+  
 end
 
   
