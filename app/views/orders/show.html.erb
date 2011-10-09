@@ -24,11 +24,11 @@
 <% @order.line_items.each do |item| %>
   <tr>
     <td> <div class="entry">
-        <%= image_tag(item.photo.image_url) %>
+        <%= image_tag(url_for({:controller => 'photos', :action => 'sample_image', :id => item.photo.id}), :method => :get) %>
     </div>
     </td>
     <td><%= item.photo.Title %></td>
-    <td><%= link_to ('download'), item.photo.original_image_url, :target => "_blank"%></td>
+    <td><%= link_to ('download'), url_for({:controller => 'photos', :action => 'original_image', :id => item.photo.id}), :target => "_blank"%></td>
   </tr>
 <% end %>
 </table>
